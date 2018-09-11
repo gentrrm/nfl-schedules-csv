@@ -51,7 +51,9 @@ def write_to_csv(file_name : str, rows : list) -> None:
                 
             except ValueError as e:
                 # This means that there is a BYE WEEK
-                writer.writerow([row.find_all('td')[0].text, row.find_all('td')[1].text])
+                writer.writerow([row.find_all('td')[0].text, 
+                                 row.find_all('td')[1].text,
+                                 'BYE WEEK'])
 
 
 def main():
