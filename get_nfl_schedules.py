@@ -40,11 +40,11 @@ def write_to_csv(file_name : str, rows : list) -> None:
                     time = row.find_all('td')[3].text
                     time = time[:time.index('M') + 1]
                     date = datetime.strptime(row.find_all('td')[1].text + " " + time, 
-                                             '%a, %b %d %I:%M %p').replace(year=2018)
+                                             '%a, %b %d %I:%M %p').replace(year=2023)
                 except Exception:
                     # This means there is not date.
                     date = datetime.strptime(row.find_all('td')[1].text, '%a, %b %d') \
-                                   .replace(year=2018)
+                                   .replace(year=2023)
                 writer.writerow([row.find_all('td')[0].text,
                                  row.find_all('td')[2].text, 
                                  date])
